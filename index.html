@@ -4,25 +4,45 @@
 <meta charset="utf-8">
 <title>Musico</title>
 <link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/foundation.min.css" rel="stylesheet" type="text/css">
+<link href="css/normalize.css" rel="stylesheet" type="text/css">
 <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
 	<div class="frame">
-
-		<div class="top-bar">
-			<div class="playlist">
-			</div>
-			<div id="ticker">
-			</div>
-			<div id="search">
-			</div>
+	<div class="row">
+		<div class="ticker-container medium-12 columns">
+			<span class="ticker-artist">Kendrick Lamar - i <i class="fa fa-lg fa-caret-up up"></i></span>
+			<span class="ticker-artist">Robin Thicke - Blurred Lines <i class="fa fa-lg fa-caret-down down"></i></span>
+			<span class="ticker-artist">Taylor Swift - Shake It Off <i class="fa fa-lg fa-caret-up up"></i></span>
+			<span class="ticker-artist">Hozier - Take Me To Church <i class="fa fa-lg fa-caret-up up"></i></span>
 		</div>
-		<div class="container">
-			<div class="playlist">
+	</div>
+		<div class="top-bar row">
+			<div class="playlist-container medium-5 large-3 columns">
+				<button class="" type="button" id="playlist-dropdown">
+					Studying
+					<span class="fa fa-caret-down"></span>
+				</button>
+				<ul id="playlist-menu">
+					<li>Studying</li>
+					<li>Working Out</li>
+					<li class="divider"></li>
+					<li>Add Playlist</li>
+				<ul>
 			</div>
+			<div class="medium-2 columns">
+			</div>
+			<div class="search-container medium-5 columns">
+			</div>
+
 		</div>
 
 	</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/foundation.min.js"></script>
 </body>
 </html>
