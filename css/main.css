@@ -121,20 +121,23 @@ i.down{
 	height: calc(100% - 80px);
 }
 
-.music-list{
-	padding: 0 !important;
-	max-height: calc(100% - 60px);
-	overflow-y: scroll;
+.playlist{
+	padding: 0 0 15px 0 !important;
+	overflow-y: auto;
+	height: 80%;
 }
 .music-container{
-	padding: 10px;
+	margin: 8px;
 }
 .song-container{
 	display: inline-block;
 }
 .song{
 	font-weight: 700;
-	font-size: 1.2em;
+	font-size: 1.1em;
+}
+.artist{
+	font-size:  .9em;
 }
 .song-service{
 	display: inline-block;
@@ -149,4 +152,45 @@ i.down{
 }
 .fa-laptop{
 	margin-right: 10px;
+}
+
+.now-playing{
+	border: 2px solid #333;
+	border-radius: 4px;
+	height: 20%;
+}
+.music-controls{
+	margin: 0 !important;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.music-buttons{
+	text-align: center;
+}
+.fa-pause{
+	margin: 0 30px;
+}
+.fa-random{
+	text-align: right;
+}
+.time{
+	text-align: center;
+}
+.time-bar{
+	width: 60%;
+	height: 3px;
+	background-color: #e7e7e7;
+	max-width: 200px;
+	margin: 0 10px;
+	display: inline-block;
+	vertical-align: 4px;
+}
+.current-time{
+	width: 2px;
+	height: 13px;
+	background-color: red;
+	position: relative;
+	display: inline-block;
+	right: 193px;
+	bottom: -1px;
 }
