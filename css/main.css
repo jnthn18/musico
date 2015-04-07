@@ -124,7 +124,7 @@ i.down{
 .playlist{
 	padding: 0 0 15px 0 !important;
 	overflow-y: auto;
-	height: 80%;
+	height: 77%;
 }
 .music-container{
 	margin: 8px;
@@ -157,7 +157,7 @@ i.down{
 .now-playing{
 	border: 2px solid #333;
 	border-radius: 4px;
-	height: 20%;
+	height: 23%;
 }
 .music-controls{
 	margin: 0 !important;
@@ -173,10 +173,10 @@ i.down{
 .fa-random{
 	text-align: right;
 }
-.time{
+.time, .sound{
 	text-align: center;
 }
-.time-bar{
+.time-bar, .sound-bar{
 	width: 60%;
 	height: 3px;
 	background-color: #e7e7e7;
@@ -193,4 +193,8 @@ i.down{
 	display: inline-block;
 	right: 193px;
 	bottom: -1px;
+}
+.fa-circle{
+	position: relative;
+	right: 90px;
 }
