@@ -9,6 +9,24 @@ body, html{
 	.music-controls .fa-pause, .music-controls .fa-play{
 		margin: 0 20px !important;
 	}
+	.fa-2x{
+		font-size: 1.3em !important;
+	}
+	.song{
+		font-size: .85em !important;
+	}
+	.artist{
+		font-size: .75em !important;
+	}
+	.favorite{
+		width: 30px !important;
+	}
+	.song-service{
+		margin: 0 10px 0 5px !important;
+	}
+	.playlist{
+		padding-bottom: 75px !important;
+	}
 }
 
 .frame{
