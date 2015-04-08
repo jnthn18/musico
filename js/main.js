@@ -6,6 +6,12 @@ $(document).ready(function() {
 			$("#playlist-menu").velocity("slideUp", {duration: 300});
 		}
 	});
+	$(".frame").click(function() {
+		if ( $("#playlist-menu").css("display") !== 'none'){
+			$("#playlist-menu").velocity("slideUp", {duration: 300});
+		}
+	});
+
 	$("#playlist-menu li").click(function() {
 		var listLength = $("#playlist-menu li").length - 1;
 		var listID = $(this).index();
