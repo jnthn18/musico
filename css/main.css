@@ -54,6 +54,10 @@ body, html{
 	margin-top: 0px;
 	margin-left: 0px;
 	padding: 0;
+	background-color: #FFF;
+	position: relative;
+	z-index: 1;
+	font-size: 1.1rem;
 	display: none;
 }
 #playlist-menu li{
@@ -122,47 +126,48 @@ i.down{
 }
 
 .playlist{
-	padding: 0 0 15px 0 !important;
 	overflow-y: auto;
-	height: 77%;
+	height: calc(100% - 175px);
+	width: calc(33% + 15px) !important;
 }
 .music-container{
 	margin: 8px;
 }
-.song-container{
+body .song-container{
 	display: inline-block;
+	line-height: 1.1;
 }
 .song{
 	font-weight: 700;
-	font-size: 1.1em;
+	font-size: .95em;
 }
 .artist{
-	font-size:  .9em;
+	font-size:  .8em;
 }
 .song-service{
 	display: inline-block;
-	float: right;
-	margin-top: 10px;
+	width: 40px;
+	margin: 0 20px 0 10px;
+	text-align: center;
 }
-.fa-spotify{
-	margin-right: 12px;
-}
-.fa-soundcloud{
-	margin-right: 10px;
-}
-.fa-laptop{
-	margin-right: 10px;
+.favorite{
+	display: inline-block;
+	width: 40px;
 }
 
 .now-playing{
 	border: 2px solid #333;
 	border-radius: 4px;
-	height: 23%;
+	padding: 10px;
+	position: absolute;
+	bottom: 0;
+}
+.now-playing .music-container{
+	margin: 0 !important;
 }
 .music-controls{
 	margin: 0 !important;
-	padding-bottom: 10px;
-	padding-top: 10px;
+	padding: 10px 0;
 }
 .music-buttons{
 	text-align: center;
