@@ -5,6 +5,12 @@ body, html{
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 }
+@media (max-width: 1450px){
+	.music-controls .fa-pause, .music-controls .fa-play{
+		margin: 0 20px !important;
+	}
+}
+
 .frame{
 	width: calc(80%);
 	height: calc(90%);
@@ -129,6 +135,7 @@ i.down{
 	overflow-y: auto;
 	height: calc(100% - 175px);
 	width: calc(33% + 15px) !important;
+	padding-bottom: 150px;
 }
 .music-container{
 	margin: 8px;
@@ -164,15 +171,23 @@ body .song-container{
 }
 .now-playing .music-container{
 	margin: 0 !important;
+	text-align: center;
+}
+.now-playing .song{
+	font-size: 1.4em;
+}
+.now-playing .artist{
+	font-size: 1em;
 }
 .music-controls{
 	margin: 0 !important;
 	padding: 10px 0;
-}
-.music-buttons{
 	text-align: center;
 }
-.fa-pause{
+.music-controls .fa-star-o{
+	text-align: left;
+}
+.music-controls .fa-pause, .music-controls .fa-play{
 	margin: 0 30px;
 }
 .fa-random{
