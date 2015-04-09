@@ -45,7 +45,6 @@ body, html{
 }
 .top-bar{
 	height: 51px;
-	/*border-bottom:1px solid #333;*/
 }
 
 .playlist-container{
@@ -106,6 +105,62 @@ body, html{
 }
 #playlist-menu .divider:hover{
 	cursor: default;
+}
+.playlist-form{
+	position: absolute;
+	z-index: 2;
+	top: 50px;
+	background-color: #FFF;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 4px;
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	padding: 15px;
+	opacity: 0;
+	display: none;
+}
+.playlist-form-wrapper{
+	opacity: 0;
+	display: none;
+}
+#new-playlist{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	width: 80%;
+	font-size: 1.25em;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 4px;
+	box-shadow: 0 1px 3px rgba(0,0,0,.175);
+	padding-left: 8px;	
+	margin: 0 auto;
+}
+.playlist-form-btn{
+	color: #448AFF;
+	background-color: #FFF;
+	height: 45px;
+	line-height: 45px;
+	width: 80%;
+	border: 1px solid rgba(0,0,0,.15);
+	box-shadow: 0 1px 3px rgba(0,0,0,.175);
+	border-radius: 4px;
+	font-weight: 700;
+	font-size: 1.2em;
+	margin: 0 auto;
+	display: block;
+	margin-top: 15px;
+	transition: background-color 0.3s ease;
+}
+.playlist-form-btn:hover{
+	background-color: #448AFF;
+	color: #FFF;
+}
+.playlist-form-btn.back{
+	background-color: #FFF;
+	color: #FF5252;
+}
+.playlist-form-btn.back:hover{
+	color: #FFF;
+	background-color: #FF5252;
 }
 
 .row{
