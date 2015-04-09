@@ -13,8 +13,11 @@ $(document).ready(function() {
 
 	var list = [playlist_1, playlist_2];
 
-	function createPlaylist(p){
+	function switchPlaylist(p){
 		var playlistLength = p[0].length;
+		if(playlistLength == 0){
+			$(".playlist").append("<div class='new-playlist'>Looks like this playlist is empty!</div>");
+		}
 		$(".playlist").css("display", "none").css("opacity", 0);
 		for(var i = 0; i<playlistLength; i++){
 			var songID = p[0][i];
@@ -42,7 +45,7 @@ $(document).ready(function() {
 		$(".music-container").velocity("transition.slideLeftIn", {stagger: 120});
 	}
 
- createPlaylist(playlist_1);
+ switchPlaylist(playlist_1);
 
 	$("#playlist-dropdown").click(function() {
 		if( $("#playlist-menu").css('display') == 'none'){
@@ -56,22 +59,27 @@ $(document).ready(function() {
 			$("#playlist-menu").velocity("slideUp", {duration: 300});
 		}*/
 	});
-
-	$("#playlist-menu li").click(function() {
+	function createPlaylist(l,n){
+		var newList = "<li>"+n+"</li>";
+		var tmp = [[],[],[],[],[]];
+		list.push(tmp);
+		$("#playlist-menu li").eq(l).after(newList);
+		$(".playlist-form").velocity("transition.slideDownOut", {duration: 300});
+		$("#playlist-menu").velocity("transition.slideDownIn", {duration: 300, delay: 200});
+	}
+	$("#playlist-submit").click(function() {
+		var lastList = $("#playlist-menu li").length - 3;
+		var newList = $("#new-playlist").val();
+		createPlaylist(lastList,newList);
+	});
+	$("#playlist-menu").on("click", "li", function() {
 		var listLength = $("#playlist-menu li").length - 1;
 		var listID = $(this).index();
-
 		if( listID === listLength ){
-		// alert("create playlist");
-/*			var lastList = $("#playlist-menu li").length - 3;
-			var newList = "<li>"+"Hanging Out"+"</li>";
-			$("#playlist-menu li").eq(lastList).after(newList);*/
-		var menuWidth = $("#playlist-menu").width();
-		var menuHeight = $("#playlist-menu").height();
-		$("#playlist-menu").css("height", menuHeight);
-		$("#playlist-menu").velocity("transition.slideDownOut", {duration: 300});
-		$(".playlist-form").css("width", menuWidth).velocity("transition.slideDownIn");
-		$(".playlist-form-wrapper").velocity("transition.slideDownIn", {duration: 300, delay: 200});
+			var menuWidth = $("#playlist-menu").width();
+			$("#playlist-menu").velocity("transition.slideDownOut", {duration: 300});
+			$(".playlist-form").css("width", menuWidth).velocity("transition.slideDownIn");
+			$(".playlist-form-wrapper").velocity("transition.slideDownIn", {duration: 300, delay: 200});
 		} else if ( listID === listLength - 1){
 
 		} else {
@@ -79,7 +87,7 @@ $(document).ready(function() {
 			if ( $("#playlist-title").html() !== playlist ){
 				$("#playlist-title").velocity("transition.slideRightOut", {duration: 200});
 				$(".playlist").empty();
-				createPlaylist(list[listID]);
+				switchPlaylist(list[listID]);
 				setTimeout(function() {
 					
 					$("#playlist-title").html(playlist).velocity("transition.slideLeftIn", {duration: 200});

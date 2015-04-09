@@ -134,6 +134,10 @@ body, html{
 	padding-left: 8px;	
 	margin: 0 auto;
 }
+.new-playlist{
+	font-size: 1.4em;
+	font-weight: 700;
+}
 .playlist-form-btn{
 	color: #448AFF;
 	background-color: #FFF;
