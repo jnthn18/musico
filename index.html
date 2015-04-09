@@ -46,13 +46,14 @@
 				<input type="text" id="search" placeholder="Search">
 			</div>
 		</div>
-		<div class="row container medium-12 columns">
+		<div class="row container">
 
-			<div class="playlist medium-8 large-4">
-			</div>
+			<div class="left-container small-8 medium-6 large-4 columns">
+				<div class="playlist">
+				</div>
 				
-				<div class="now-playing medium-8 large-4">
-					<div class="music-container">
+				<div class="now-playing">
+					<div class="currently-playing">
 						<div class="song-container">
 							<div class="song">ATLiens</div>
 							<div class="artist">Outkast</div>
@@ -63,16 +64,22 @@
 						<div class="current-time"></div>
 					</div>
 					<div class="music-controls row">
-						<i class="fa fa-random fa-2x small-3 columns"></i>
+						<span class="small-3 columns text-right"><i class="fa fa-random fa-2x"></i></span>
 						<span class="small-6 columns"><i class="fa fa-backward fa-2x"></i><i class="fa fa-pause fa-2x"></i><i class="fa fa-forward fa-2x"></i></span>
-						<i class="fa fa-star-o fa-2x small-3 columns"></i>
+						<span class="small-3 columns text-left"><i class="fa fa-star-o fa-2x"></i></span>
 					</div>
 					<div class="sound">
 						<span class="volume-down"><i class="fa fa-volume-off"></i></span><div class="sound-bar"></div><span class="volume-up"><i class="fa fa-volume-up"></i></span>
 						<div class="fa fa-circle"></div>
 					</div>
 				</div>
-			
+			</div>
+			<div class="right-container small-4 medium-6 large-8 column">
+				<div class="favorite-music small-12 columns"></div>
+				<div class="rap-music small-6 columns"></div>
+				<div class="rock-music small-6 columns"></div>
+			</div>
+			<!-- end of row -->
 		</div>
 
 	</div>
