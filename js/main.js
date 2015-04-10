@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	
-	var p1_songID = [1,2,3,4,5,6];
-	var p1_favorite = [1,0,0,1,0,1];
-	var p1_songservice = [1,2,3,2,3,3];
-	var p1_artist = ["Red Hot Chili Peppers","Taylor Swift","Outkast","Red Hot Chili Peppers","Taylor Swift","Outkast"];
-	var p1_song = ["Dani California","Shake It Off","ATLiens","Dani California","Shake It Off","ATLiens"];
+	var p1_songID = [1,2,3,4,5,6,7,8];
+	var p1_favorite = [1,0,0,1,0,1,1,0];
+	var p1_songservice = [1,2,3,2,3,3,1,2];
+	var p1_artist = ["Red Hot Chili Peppers","Taylor Swift","Outkast","Red Hot Chili Peppers","Taylor Swift","Outkast","Outkast","Red Hot Chili Peppers"];
+	var p1_song = ["Dani California","Shake It Off","ATLiens","Dani California","Shake It Off","ATLiens","ATLiens","Dani California"];
 	var playlist_1 = [p1_songID, p1_favorite, p1_songservice, p1_artist, p1_song];
 
 	var p2_favorite = [0,1,1,0,1];
@@ -84,17 +84,37 @@ $(document).ready(function() {
 
 		} else {
 			var playlist = $("#playlist-menu li").eq(listID).html();
+			$("#playlist-menu li").removeClass("selected");
+			$("#playlist-menu li").eq(listID).addClass("selected");
 			if ( $("#playlist-title").html() !== playlist ){
 				$("#playlist-title").velocity("transition.slideRightOut", {duration: 200});
 				$(".playlist").empty();
 				switchPlaylist(list[listID]);
 				setTimeout(function() {
-					
 					$("#playlist-title").html(playlist).velocity("transition.slideLeftIn", {duration: 200});
 				}, 210);
 				$("#playlist-menu").velocity("slideUp", {duration: 300});				
 			}
-
 		}
 	});
+	$(".right-container li").click(function() {
+		var artist = $(".artist", this).html();
+		$(".add-music-artist").html(artist);
+		$(".add-music").velocity("transition.slideUpIn", {duration: 250});
+	});
+	$(".add-music-back").click(function() {
+		$(".add-music").velocity("transition.slideDownOut", {duration: 250});
+	});
+	$(".add-music-list li").click(function() {
+		var song = $(".song-list", this).html();
+		var songservice = 0;
+		var artist = $(".add-music-artist").html();
+		if($("i", this).hasClass("fa-spotify") === true){
+			songservice = 1;
+		} else {
+			songservice = 2;
+		}
+
+	});
+
 });
