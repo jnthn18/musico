@@ -227,6 +227,14 @@ i.down{
 .left-container{
 	box-sizing: border-box;
 	min-height: 100%;
+	max-height: 100%;
+}
+.right-container{
+  box-sizing: border-box;
+  min-height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .playlist{
 	overflow-y: auto;
@@ -268,7 +276,7 @@ body .song-container{
 	padding: 10px;
 	position: absolute;
 	bottom: 0;
-	width: 100%;
+	width: 90%;
 }
 .now-playing .currently-playing{
 	margin: 0 !important;
@@ -316,10 +324,23 @@ body .song-container{
 }
 
 .favorite-music{
-	height: 25%;
-	border: 1px solid #333;
+	min-height: calc(25%);
 }
 .rap-music, .rock-music{
-	height: 50%;
-	border: 1px solid #333;
+	min-height: 50%;
+}
+.right-container .artist{
+	font-size: 1.2em;
+	font-weight: 700;
+	text-align: center;
+}
+.music-header{
+	margin:0;
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 10px;
+}
+.artist-img{
+	margin: 0 auto;
+	display: block;
 }
