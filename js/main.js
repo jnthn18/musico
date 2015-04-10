@@ -60,7 +60,8 @@ $(document).ready(function() {
 		}*/
 	});
 	function createPlaylist(l,n){
-		var newList = "<li>"+n+"</li>";
+		var newIndex = l+1;
+		var newList = "<li>"+n+"<span class='playlist-index'>"+newIndex+"</span>"+"</li>";
 		var tmp = [[],[],[],[],[]];
 		list.push(tmp);
 		$("#playlist-menu li").eq(l).after(newList);
@@ -97,6 +98,10 @@ $(document).ready(function() {
 			}
 		}
 	});
+	$("#playlist-back").click(function() {
+		$(".playlist-form").velocity("transition.slideDownOut", {duration: 300});
+		$("#playlist-menu").velocity("transition.slideDownIn", {duration: 300, delay: 200});
+	});
 	$(".right-container li").click(function() {
 		var artist = $(".artist", this).html();
 		$(".add-music-artist").html(artist);
@@ -108,13 +113,39 @@ $(document).ready(function() {
 	$(".add-music-list li").click(function() {
 		var song = $(".song-list", this).html();
 		var songservice = 0;
+		var songClass = "";
 		var artist = $(".add-music-artist").html();
+		var playList = $("#playlist-dropdown .playlist-index").html();
 		if($("i", this).hasClass("fa-spotify") === true){
 			songservice = 1;
+			songClass = "fa-spotify";
 		} else {
 			songservice = 2;
+			songClass = "fa-soundcloud";
 		}
-
+		var p = list[playList];
+		var length = p[0].length + 1;
+		if(length === 1){
+			$(".new-playlist").velocity("slideUp", {duration:200});
+		}
+		p[0].push(length);
+		p[1].push(0);
+		p[2].push(songservice);
+		p[3].push(artist);
+		p[4].push(song);
+		var songContainer = "<div class='music-container'><span class='song-id'>"+length+"</span><div class='favorite'><i class='fa fa-2x fa-star-o'></i></div><div class='song-service'><i class='fa fa-2x "+songClass+"'></i></div><div class='song-container'><div class='song'>"+song+"</div><div class='artist'>"+artist+"</div></div></div>";
+		$(".playlist").append(songContainer);
+		$(".add-music").velocity("transition.slideDownOut", {duration: 250});
 	});
-
+	$("#search").on("change paste keyup", function() {
+		if($(".search-results").css("opacity") == 0){
+	   $(".search-results").velocity("transition.slideDownIn", {duration: 200});
+		}
+		if($("#search").val().length == 0){
+			$(".search-results").velocity("transition.slideDownOut", {duration: 200});
+		}
+	});
+	$(".search-results").click(function() {
+		$(".search-results").velocity("transition.slideDownOut", {duration: 200});
+	});
 });
