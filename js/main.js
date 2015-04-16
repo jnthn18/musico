@@ -1,10 +1,10 @@
 $(document).ready(function() {
 	
-	var p1_songID = [1,2,3,4,5,6,7,8];
-	var p1_favorite = [1,0,0,1,0,1,1,0];
-	var p1_songservice = [1,2,3,2,3,3,1,2];
-	var p1_artist = ["Red Hot Chili Peppers","Taylor Swift","Outkast","Red Hot Chili Peppers","Taylor Swift","Outkast","Outkast","Red Hot Chili Peppers"];
-	var p1_song = ["Dani California","Shake It Off","ATLiens","Dani California","Shake It Off","ATLiens","ATLiens","Dani California"];
+	var p1_songID = [1,2,3,4,5,6];
+	var p1_favorite = [1,0,0,1,0,1];
+	var p1_songservice = [1,2,3,2,3,3];
+	var p1_artist = ["Red Hot Chili Peppers","Taylor Swift","Outkast","Red Hot Chili Peppers","Taylor Swift","Outkast"];
+	var p1_song = ["Dani California","Shake It Off","ATLiens","Dani California","Shake It Off","ATLiens"];
 	var playlist_1 = [p1_songID, p1_favorite, p1_songservice, p1_artist, p1_song];
 
 	var p2_favorite = [0,1,1,0,1];
@@ -71,7 +71,11 @@ $(document).ready(function() {
 	$("#playlist-submit").click(function() {
 		var lastList = $("#playlist-menu li").length - 3;
 		var newList = $("#new-playlist").val();
-		createPlaylist(lastList,newList);
+		if (newList === "" || newList === " "){
+			$("#new-playlist").velocity("callout.shake");
+		} else {
+			createPlaylist(lastList,newList);
+		}
 	});
 	$("#playlist-menu").on("click", "li", function() {
 		var listLength = $("#playlist-menu li").length - 1;
@@ -95,6 +99,8 @@ $(document).ready(function() {
 					$("#playlist-title").html(playlist).velocity("transition.slideLeftIn", {duration: 200});
 				}, 210);
 				$("#playlist-menu").velocity("slideUp", {duration: 300});				
+			} else {
+				$("#playlist-menu").velocity("slideUp", {duration: 300});
 			}
 		}
 	});
@@ -136,6 +142,7 @@ $(document).ready(function() {
 		var songContainer = "<div class='music-container'><span class='song-id'>"+length+"</span><div class='favorite'><i class='fa fa-2x fa-star-o'></i></div><div class='song-service'><i class='fa fa-2x "+songClass+"'></i></div><div class='song-container'><div class='song'>"+song+"</div><div class='artist'>"+artist+"</div></div></div>";
 		$(".playlist").append(songContainer);
 		$(".add-music").velocity("transition.slideDownOut", {duration: 250});
+		$("#search").val("");
 	});
 	$("#search").on("change paste keyup", function() {
 		if($(".search-results").css("opacity") == 0){

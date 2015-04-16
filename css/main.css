@@ -1,14 +1,10 @@
 body, html{
 	background-color: #1a1c24 !important;
 	height: 100%;
-	min-height: 100%;
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 }
 @media (max-width: 1450px){
-	.music-controls .fa-pause, .music-controls .fa-play{
-		margin: 0 20px !important;
-	}
 	.fa-2x{
 		font-size: 1.3em !important;
 	}
@@ -26,7 +22,6 @@ body, html{
 	}
 	.playlist{
 		padding-bottom: 75px !important;
-		max-height: 240px !important;
 	}
 	.now-playing .currently-playing{
 		line-height: 30px !important;
@@ -43,7 +38,7 @@ body, html{
 	height: calc(90%);
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #FFF;
+	background-color: #FFF !important;
 	border: 3px solid #e7e7e7;
 	border-radius: 6px;
 	position: relative;
@@ -147,7 +142,7 @@ body, html{
 	height: 40px;
 	line-height: 40px;
 	width: 80%;
-	font-size: 1.25em;
+	font-size: 1.15em;
 	border: 1px solid rgba(0,0,0,.15);
 	border-radius: 4px;
 	box-shadow: 0 1px 3px rgba(0,0,0,.175);
@@ -162,7 +157,7 @@ body, html{
 	color: #448AFF;
 	background-color: #FFF;
 	height: 45px;
-	line-height: 45px;
+	line-height: 40px;
 	width: 80%;
 	border: 1px solid rgba(0,0,0,.15);
 	box-shadow: 0 1px 3px rgba(0,0,0,.175);
@@ -289,6 +284,7 @@ body .song-container{
 	position: absolute;
 	bottom: 0;
 	width: 90%;
+	background-color: #FFF;
 }
 .now-playing .currently-playing{
 	margin: 0 !important;
@@ -307,7 +303,7 @@ body .song-container{
 	text-align: center;
 }
 .music-controls .fa-pause, .music-controls .fa-play{
-	margin: 0 30px;
+	margin: 0 20px;
 }
 .time, .sound{
 	text-align: center;
